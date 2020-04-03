@@ -94,7 +94,7 @@
 # fi
 
 
-# #file handling
+# #file validation
 # echo -e "Enter the name of the file: \c"
 # read file_name
 
@@ -167,25 +167,203 @@
 #floating point
 #bc - basic calculator
 #for manual run: man bc
-num1=20.5
-num2=5
+# num1=20.5
+# num2=5
 
-echo "$num1 + $num2" | bc
-echo "$num1 - $num2" | bc
-echo "$num1 * $num2" | bc
-echo "scale=20; $num1 / $num2" | bc
-echo "$num1 % $num2" | bc
+# echo "$num1 + $num2" | bc
+# echo "$num1 - $num2" | bc
+# echo "$num1 * $num2" | bc
+# echo "scale=20; $num1 / $num2" | bc
+# echo "$num1 % $num2" | bc
 
-#math library -l
-echo "scale=2; sqrt($num1)" | bc -l
-echo "scale=2; 3^3" | bc -l
+# #math library -l
+# echo "scale=2; sqrt($num1)" | bc -l
+# echo "scale=2; 3^3" | bc -l
 
 
 #case statement
-case expression in
-    pattern1 )
-        statements ;;
-    pattern2 )
-        statements ;;
-    ...
-esac
+# vehicle=$1
+
+# case $vehicle in
+#     "car" )
+#         echo "You entered car." ;;
+#     "bicycle" )
+#         echo "You entered bicycle." ;;
+#     "truck" )
+#         echo "You entered truck." ;;
+#     * )
+#         echo "You entered $vehicle"
+# esac
+
+# echo -e "Enter some character: \c"
+# read value
+
+# case $value in
+#     [a-z] )
+#         echo "You entered small letter $value." ;;
+#     [A-Z] )
+#         echo "You entered capital letter $value." ;;
+#     [0-9] )
+#         echo "You entered number $value" ;;
+#     ? )
+#         echo "You entered special character $value" ;;
+#     * )
+#         echo "You entered $value" ;;
+# esac
+
+
+# #array variables
+# os=('ubuntu' 'windows' 'kali')
+# #add element
+# os[3]='mac'
+# os[6]='fedora'
+# #update element
+# os[1]='fedora'
+# #remove element
+# unset os[1]
+# echo "${os[@]}"
+# echo "${os[2]}"
+# #index of elements
+# echo "${!os[@]}"
+# #length of array
+# echo "${#os[@]}"
+
+# string=kugku
+# echo "${string[@]}"
+# #value of string at index 0
+# echo "${string[0]}"
+# #nothing value at index 1
+# echo "${string[1]}"
+# #length
+# echo "${#string[@]}"
+
+
+#while loop
+# n=1
+# # while [ $n -le 10 ]
+# while (( $n <= 3 ))
+# do
+#     echo $n
+#     # n=$(( n+1 ))
+#     (( n++ ))
+
+#     # sleep of 1s
+#     sleep 1
+    
+#     #opening terminal
+#     # gnome-terminal &
+#     # xterm &
+# done
+
+
+#file handling
+
+#stream the content into input redirection <
+# while read p
+# do
+#     echo $p
+# done < hello.sh
+
+#read in single variable
+# cat hello.sh | while read p
+# do
+#     echo $p
+# done
+
+#read using IFS - Internal Field Separator
+# while IFS= read -r line
+# do
+#     echo $line
+# done < hello.sh
+
+
+#until loop
+# n=1
+
+# #do if [condition is false]
+# until [ $n -gt 10 ]
+# do
+#     echo $n
+#     (( n++ ))
+# done
+
+
+#for loop
+# for n in 1 2 3 4
+# do
+#     echo $n
+# done
+
+#for BASH_VERSION > 3.0
+#shorthand
+# for n in {1..4}
+#for BASH_VERSION > 4.0
+#increment
+# for n in {1..4..2}
+# do
+#     echo $n
+# done
+
+# for (( i=0; i<4; i++ ))
+# do
+#     echo $i
+# done
+
+# for command in ls pwd date
+# do
+#     echo "--------$command------------"
+#     $command
+# done
+
+# for item in *
+# do
+#     #print directories
+#     if [ -d $item ]
+#     then
+#         echo $item
+#     fi
+#     #print files
+#     if [ -f $item ]
+#     then
+#         echo $item
+#     fi
+# done
+
+
+#select loop
+# select value in mano har kum ar
+# do
+#     echo $value
+# done
+
+# select value in mano har kum ar
+# do
+#     case $value in
+#     mano )
+#         echo Hey MANO!
+#         ;;
+#     * )
+#         echo Hey $value
+#         ;;
+#     esac
+# done
+
+
+#break and continue
+# for (( i=1; i<10; i++ ))
+# do
+#     if [ $i -gt 5 ]
+#     then
+#         break
+#     fi
+#     echo $i
+# done
+
+for (( i=1; i<10; i++ ))
+do
+    if [ $i -eq 5 -o $i -eq 7 ]
+    then
+        continue
+    fi
+    echo $i
+done
