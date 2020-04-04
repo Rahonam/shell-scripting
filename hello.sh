@@ -1,20 +1,23 @@
 #! /usr/bin/bash
 
-#source : https://www.youtube.com/watch?v=cQepf9fY6cE&list=PLS1QulWo1RIYmaxcEqw5JhK3b-6rgdWO_&index=1
+# # # The first line tells Unix that the file is to be executed by /bin/bash.
+# # #This is the standard location of the Bourne Again shell on just about every Unix system.
 
-# #comment
+# # # source : https://www.youtube.com/watch?v=cQepf9fY6cE&list=PLS1QulWo1RIYmaxcEqw5JhK3b-6rgdWO_&index=1
+
+# # # comment
 # echo "Hello world!"
 
 
-# #system variable - by OS
-# #CAPITAL cases
+# # # system variable - by OS
+# # # CAPITAL cases
 # echo $BASH
 # echo Our shell version is $BASH_VERSION
 # echo $HOME
 # echo $PWD
 
 
-# #user variables - by users
+# # # user variables - by users
 # name=Manohar
 # 10=10
 # ten=10
@@ -23,7 +26,7 @@
 # echo $ten
 
 
-# #input
+# # # input
 # echo "Enter your name: "
 # read name
 # echo Hey $name!
@@ -32,55 +35,55 @@
 # read num1 num2
 # echo Sum is $(($num1+$num2))
 
-# #input prompt in same line
+# # # input prompt in same line
 # read -p "Enter Username: " user_name
 
-# #input password
+# # # input password
 # read -sp "Enter Password: " pass_word
 
 # echo
 # echo "Your Username: $user_name"
 # echo "Your Password: $pass_word"
 
-# #input in to array
+# # # input in to array
 # echo "Enter names: "
 # read -a names
 # echo "Name at 0: ${names[0]}, 1: ${names[1]}"
 
-# #default input variable
+# # # default input variable
 # echo "Enter your reply: "
 # read
 # echo "Your reply is: $REPLY"
 
 
-#passing arguments
+# # # passing arguments
 # echo $0 $1 $2 $3
 
-# #passing arguments as array
+# # # passing arguments as array
 # args=("$@")
 # echo ${args[0]} ${args[1]}
 # echo $@
 # echo $#
 
 
-#conditional construct
+# # # conditional construct
 
-#string comparision
-# [ s1 = s2 ]  (true if s1 same as s2, else false)
-# [ s1 != s2 ]  (true if s1 not same as s2, else false)
-# [ s1 ]   (true if s1 is not empty, else false)
-# [ -n s1 ]   (true if s1 has a length greater then 0, else false)
-# [ -z s2 ]   (true if s2 has a length of 0, otherwise false)
-#use [[]] for angle brackets: ==, !=, <, >
+# # # string comparision
+# # # [ s1 = s2 ]  (true if s1 same as s2, else false)
+# # # [ s1 != s2 ]  (true if s1 not same as s2, else false)
+# # # [ s1 ]   (true if s1 is not empty, else false)
+# # # [ -n s1 ]   (true if s1 has a length greater then 0, else false)
+# # # [ -z s2 ]   (true if s2 has a length of 0, otherwise false)
+# # # use [[]] for angle brackets: ==, !=, <, >
 
-#number comparision
-# [ n1 -eq n2 ]  (true if n1 same as n2, else false)
-# [ n1 -ge n2 ]  (true if n1greater then or equal to n2, else false)
-# [ n1 -le n2 ]  (true if n1 less then or equal to n2, else false)
-# [ n1 -ne n2 ]  (true if n1 is not same as n2, else false)
-# [ n1 -gt n2 ]  (true if n1 greater then n2, else false)
-# [ n1 -lt n2 ]  (true if n1 less then n2, else false)
-#use (()) for angle brackets: ==, !=, <, >, <=, >=
+# # # number comparision
+# # # [ n1 -eq n2 ]  (true if n1 same as n2, else false)
+# # # [ n1 -ge n2 ]  (true if n1greater then or equal to n2, else false)
+# # # [ n1 -le n2 ]  (true if n1 less then or equal to n2, else false)
+# # # [ n1 -ne n2 ]  (true if n1 is not same as n2, else false)
+# # # [ n1 -gt n2 ]  (true if n1 greater then n2, else false)
+# # # [ n1 -lt n2 ]  (true if n1 less then n2, else false)
+# # # use (()) for angle brackets: ==, !=, <, >, <=, >=
 
 # word=xyz
 # if [ $word == "abc" ]
@@ -94,19 +97,19 @@
 # fi
 
 
-# #file validation
+# # # file validation
 # echo -e "Enter the name of the file: \c"
 # read file_name
 
-#-e file exist
-#-f file exist and regular file
-#-d directory exist
-#-s file empty
-#-c character files
-#-b block files (multimedia)
-#-w write permissions
-#-r read permissions
-#-x execute permissions
+# # # -e file exist
+# # # -f file exist and regular file
+# # # -d directory exist
+# # # -s file empty
+# # # -c character files
+# # # -b block files (multimedia)
+# # # -w write permissions
+# # # -r read permissions
+# # # -x execute permissions
 
 # if [ -s $file_name ]
 # then
@@ -115,7 +118,7 @@
 #     echo "$file_name not True!"
 # fi
 
-# #appending file
+# # # appending file
 # if [ -f $file_name ]
 # then
 #     if [ -w $file_name ]
@@ -130,7 +133,7 @@
 # fi
 
 
-#Logical operator
+# # # Logical operator
 
 # age=25
 
@@ -147,7 +150,7 @@
 # fi
 
 
-#arithmetic operations
+# # # arithmetic operations
 
 # num1=20
 # num2=5
@@ -160,13 +163,13 @@
 
 # echo $(expr $num1 + $num2 )
 # echo $(expr $num1 - $num2 )
-# echo $(expr $num1 \* $num2 ) #escape * for expr
+# echo $(expr $num1 \* $num2 ) # escape * for expr
 # echo $(expr $num1 / $num2 )
 # echo $(expr $num1 % $num2 )
 
-#floating point
-#bc - basic calculator
-#for manual run: man bc
+# # # floating point
+# # # bc - basic calculator
+# # # for manual run: man bc
 # num1=20.5
 # num2=5
 
@@ -176,12 +179,12 @@
 # echo "scale=20; $num1 / $num2" | bc
 # echo "$num1 % $num2" | bc
 
-# #math library -l
+# # # math library -l
 # echo "scale=2; sqrt($num1)" | bc -l
 # echo "scale=2; 3^3" | bc -l
 
 
-#case statement
+# # # case statement
 # vehicle=$1
 
 # case $vehicle in
@@ -195,6 +198,7 @@
 #         echo "You entered $vehicle"
 # esac
 
+# # # patterns matching
 # echo -e "Enter some character: \c"
 # read value
 
@@ -212,33 +216,41 @@
 # esac
 
 
-# #array variables
+# # # array variables
 # os=('ubuntu' 'windows' 'kali')
+
 # #add element
 # os[3]='mac'
 # os[6]='fedora'
+
 # #update element
 # os[1]='fedora'
+
 # #remove element
 # unset os[1]
 # echo "${os[@]}"
 # echo "${os[2]}"
+
 # #index of elements
 # echo "${!os[@]}"
+
 # #length of array
 # echo "${#os[@]}"
 
 # string=kugku
 # echo "${string[@]}"
+
 # #value of string at index 0
 # echo "${string[0]}"
+
 # #nothing value at index 1
 # echo "${string[1]}"
+
 # #length
 # echo "${#string[@]}"
 
 
-#while loop
+# # # while loop
 # n=1
 # # while [ $n -le 10 ]
 # while (( $n <= 3 ))
@@ -247,40 +259,40 @@
 #     # n=$(( n+1 ))
 #     (( n++ ))
 
-#     # sleep of 1s
+#     # # sleep of 1s
 #     sleep 1
     
-#     #opening terminal
+#     # # opening terminal
 #     # gnome-terminal &
 #     # xterm &
 # done
 
 
-#file handling
+# # # file handling
 
-#stream the content into input redirection <
+# # # stream the content into input redirection <
 # while read p
 # do
 #     echo $p
 # done < hello.sh
 
-#read in single variable
+# # # read in single variable
 # cat hello.sh | while read p
 # do
 #     echo $p
 # done
 
-#read using IFS - Internal Field Separator
+# # # read using IFS - Internal Field Separator
 # while IFS= read -r line
 # do
 #     echo $line
 # done < hello.sh
 
 
-#until loop
+# # # until loop
 # n=1
 
-# #do if [condition is false]
+# # # performs the statements inside do, if [condition is false]
 # until [ $n -gt 10 ]
 # do
 #     echo $n
@@ -288,17 +300,21 @@
 # done
 
 
-#for loop
+# # # for loop
 # for n in 1 2 3 4
 # do
 #     echo $n
 # done
 
-#for BASH_VERSION > 3.0
-#shorthand
+# # # for BASH_VERSION > 3.0
+# # # shorthand
 # for n in {1..4}
-#for BASH_VERSION > 4.0
-#increment
+# do
+#     echo $n
+# done
+
+# # # for BASH_VERSION > 4.0
+# # # increment
 # for n in {1..4..2}
 # do
 #     echo $n
@@ -317,12 +333,12 @@
 
 # for item in *
 # do
-#     #print directories
+#     # # # print directories
 #     if [ -d $item ]
 #     then
 #         echo $item
 #     fi
-#     #print files
+#     # # # print files
 #     if [ -f $item ]
 #     then
 #         echo $item
@@ -330,12 +346,13 @@
 # done
 
 
-#select loop
+# # # select loop - for menu deriven loop
 # select value in mano har kum ar
 # do
 #     echo $value
 # done
 
+# # # select and case
 # select value in mano har kum ar
 # do
 #     case $value in
@@ -349,7 +366,7 @@
 # done
 
 
-#break and continue
+# # # break and continue
 # for (( i=1; i<10; i++ ))
 # do
 #     if [ $i -gt 5 ]
@@ -359,11 +376,123 @@
 #     echo $i
 # done
 
-for (( i=1; i<10; i++ ))
+# for (( i=1; i<10; i++ ))
+# do
+#     if [ $i -eq 5 -o $i -eq 7 ]
+#     then
+#         continue
+#     fi
+#     echo $i
+# done
+
+
+# # # functions - subroutines
+# # # function keyword is optional
+# function myFun(){
+#     echo "Hello from myFun!"
+#     echo $1 $2
+# }
+
+# quit(){
+#     exit
+# }
+
+# myFun
+# myFun Hey there!
+# echo "Just exiting here..."
+# quit
+# echo "exited before this echo!"
+
+
+# # # local variables
+# function print(){
+#     # # # change is global
+#     # name=$1
+#     # # # change is local
+#     local name=$1
+#     echo "local name: $name"
+# }
+
+# name=Kumar
+# echo "global name: $name"
+
+# print Manohar
+
+# echo "global name: $name"
+
+
+# # # function example
+# is_file_exist(){
+#     local file_name=$1
+#     # # # like ternary operator
+#     [[ -f "$file_name" ]] && echo "$file_name exist" || echo "404"
+# }
+
+# usage(){
+#     echo "enter file name"
+# }
+
+# # # # check number of args passed to script
+# [[ $# -eq 0 ]] && usage
+
+# if ( is_file_exist "$1" )
+# then
+#     echo "file found"
+# else
+#     echo "file not found"
+# fi
+
+
+# # # read only command
+# var=31
+
+# readonly var
+
+# var=50
+
+# echo $var
+
+# # # # read only function
+# hello(){
+#     echo "Hello!"
+# }
+
+# readonly -f hello
+
+# hello(){
+#     echo "hey!"
+# }
+
+# hello
+
+# # # # default read only keywords
+# echo "--------------------------default readonly keywords---------------------------"
+# readonly -p
+
+# echo "-----------readonly functions------------"
+# readonly -f
+
+
+# # # signals and traps
+# echo "my PID: $$"
+
+# # # ctrl+c sigint, - signal interrupt
+# # # ctrl+z sigtstp, - signal suspend
+# # # -9 sigkill, signal kill
+# # # trap catches these signal, except SIGKILL and SIGSTOP
+
+# # # 0 signal is for exit on success
+# trap "echo Exit command detected" 0
+
+# echo "execution success"
+# exit
+
+trap "echo Exit signal detected" SIGINT
+
+while (( COUNT < 10 ))
 do
-    if [ $i -eq 5 -o $i -eq 7 ]
-    then
-        continue
-    fi
-    echo $i
+    sleep 5
+    (( COUNT++ ))
+    echo $COUNT
 done
+exit 0
